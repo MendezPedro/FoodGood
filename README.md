@@ -30,12 +30,7 @@ gem "jquery-rails", "~> 4.4"
 
 ## Defining the models
 
-![bookmark](app/assets/images/diagrama.png)
+![Good Food](app/assets/images/diagrama.png)
 
-## Endpoint the Category
 
-to access the endpoint with the category data, where you indicate subcategories and bookmarks. You must enter the following link, finished in :id :
 
-```console
-http://localhost:3000/api/category/1
-```
