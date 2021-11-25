@@ -1,24 +1,41 @@
-# README
+# Food Good
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project involves the creation of an application to food stores that are small or that do not belong to the best known. with the aim of knowing new places in your area
 
-Things you may want to cover:
+## Table of Contents
 
-* Ruby version
+* [Ruby & Rails version](#ruby---rails-version)
+* [Ruby & Rails Gems](#ruby---rails-gems)
+* [Defining the models](#defining-the-models)
+* [Endpoint the Category](#Endpoint-the-Category)
+    
+## Ruby & Rails version
 
-* System dependencies
+* ruby '2.5.3'
+* gem 'rails', '~> 5.2.6'
 
-* Configuration
+## User history
 
-* Database creation
+```ruby
+https://trello.com/b/hLa4PH0r/project
+```
 
-* Database initialization
+## Ruby & Rails Gems
 
-* How to run the test suite
+```ruby
+gem "faker", "~> 2.19"
+gem "bootstrap", "~> 5.1"
+gem "jquery-rails", "~> 4.4"
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Defining the models
 
-* Deployment instructions
+![bookmark](app/assets/images/diagrama.png)
 
-* ...
+## Endpoint the Category
+
+to access the endpoint with the category data, where you indicate subcategories and bookmarks. You must enter the following link, finished in :id :
+
+```console
+http://localhost:3000/api/category/1
+```
