@@ -60,5 +60,10 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
+#gema de usuarios
 gem "devise", "~> 4.8"
+#gema de estilos de bootstrap
+gem "jquery-rails", "~> 4.4"
+gem "bootstrap", "~> 4.3.1"
+#gema para usar nombres falsos para ayudar a crear el seed
+gem "faker", "~> 2.19"
