@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  latitude: 1
+  longitude: 1
+  day_open: 2021-11-27
+  schedule: 2021-11-27 16:50:24
+  photo: MyString
+
+two:
+  name: MyString
+  latitude: 1
+  longitude: 1
+  day_open: 2021-11-27
+  schedule: 2021-11-27 16:50:24
+  photo: MyString
