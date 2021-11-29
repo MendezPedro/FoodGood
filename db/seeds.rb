@@ -7,8 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #elimina para no crear varios registros repetidos al ejecutar el seed
-Category.destroy_all
+#Category.destroy_all
 User.destroy_all
+FoodStore.destroy_all
+Post.destroy_all
+Comment.destroy_all
 
 x=1
 5.times do
@@ -21,16 +24,49 @@ x=1
     x=x+1
 end
 
-# 6.times do
-#     Category.create(
-#         title: Faker::TvShows::Simpsons.location
-#     )
-# end
+6.times do
+    Category.create(
+        title: Faker::Food.fruits
+    )
+end
 
-# 14.times do
-#     Category.create(
-#         title: Faker::TvShows::Simpsons.location,
-#         category_id: Random.rand(1..6)
-#     )
-# end
+14.times do
+    Category.create(
+        title: Faker::TvShows::Simpsons.location,
+        category_id: Category.all.pluck("id").sample
+    )
+end
+
+5.times do
+    FoodStore.create(
+        name: Faker::Music::RockBand.name,
+        latitude: Faker::Address.latitude,
+        longitude: Faker::Address.longitude,
+        day_open: Time.zone.local(2021, 7, 11),
+        schedule: Time.now.strftime("%H:%M"),
+        photo: Faker::Avatar.image
+    )
+end
+
+5.times do
+    Post.create(
+        title: Faker::Food.fruits,
+        user_id:User.all.pluck("id").sample,
+        category_id:Category.all.pluck("id").sample,
+        food_store_id:FoodStore.all.pluck("id").sample,
+        content: Faker::Quotes::Shakespeare.hamlet_quote,
+        rating: Random.rand(1..5)
+    )
+end
+
+5.times do
+    Comment.create(
+        user_id: User.all.pluck("id").sample,
+        content: Faker::Quote.yoda,
+        likes: Random.rand(1..3),
+        post_id: Post.all.pluck("id").sample,
+    )
+end
+
+
 
