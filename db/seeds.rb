@@ -7,37 +7,37 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #elimina para no crear varios registros repetidos al ejecutar el seed
-#Category.destroy_all
+
 User.destroy_all
 FoodStore.destroy_all
 Post.destroy_all
 Comment.destroy_all
+Category.destroy_all
 
-x=1
-5.times do
+10.times do |x|
 
     User.create(
-        email: "#{x}@gmail.com",
+        email: "#{x + 1}@gmail.com",
         name: Faker::TvShows::Simpsons.character,
         avatar: Faker::Avatar.image,
         password: "123456")
-    x=x+1
+    
 end
 
-6.times do
+30.times do
     Category.create(
         title: Faker::Food.fruits
     )
 end
 
-14.times do
+100.times do
     Category.create(
         title: Faker::TvShows::Simpsons.location,
         category_id: Category.all.pluck("id").sample
     )
 end
 
-5.times do
+50.times do
     FoodStore.create(
         name: Faker::Music::RockBand.name,
         latitude: Faker::Address.latitude,
@@ -48,7 +48,7 @@ end
     )
 end
 
-5.times do
+50.times do
     Post.create(
         title: Faker::Food.fruits,
         user_id:User.all.pluck("id").sample,
@@ -59,7 +59,7 @@ end
     )
 end
 
-5.times do
+50.times do
     Comment.create(
         user_id: User.all.pluck("id").sample,
         content: Faker::Quote.yoda,

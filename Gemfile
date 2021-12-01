@@ -71,3 +71,5 @@ gem "faker", "~> 2.19"
   #gema para ver el modelo en pdf
 gem 'rails-erd', group: :development 
 gem 'ruby-graphviz'
+#gema para administradores
+gem 'rails_admin', '~> 2.0'
