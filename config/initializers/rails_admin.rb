@@ -1,10 +1,17 @@
 RailsAdmin.config do |config|
   
-  #if current_user
-    config.authorize_with do
-      redirect_to main_app.root_path unless current_user.admin == true
+
+  config.parent_controller = "::ApplicationController"
+
+  config.authorize_with do |controller|
+    unless current_user && current_user.admin?
+      redirect_to(
+        main_app.root_path,
+        alert: "You are not permitted to view this page"
+      )
     end
-  #end
+  end
+
   ### Popular gems integration
 
   ## == Devise ==
