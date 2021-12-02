@@ -14,12 +14,25 @@ Post.destroy_all
 Comment.destroy_all
 Category.destroy_all
 
-10.times do |x|
+
+2.times do |x|
 
     User.create(
         email: "#{x + 1}@gmail.com",
         name: Faker::TvShows::Simpsons.character,
         avatar: Faker::Avatar.image,
+        admin: true,
+        password: "123456")
+    
+end
+
+8.times do |x|
+
+    User.create(
+        email: "#{x + 3}@gmail.com",
+        name: Faker::TvShows::Simpsons.character,
+        avatar: Faker::Avatar.image,
+        admin: false,
         password: "123456")
     
 end

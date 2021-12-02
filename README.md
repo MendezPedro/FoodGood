@@ -7,7 +7,7 @@ This project involves the creation of an application to food stores that are sma
 * [Ruby & Rails version](#ruby---rails-version)
 * [Ruby & Rails Gems](#ruby---rails-gems)
 * [Defining the models](#defining-the-models)
-* [Endpoint the Category](#Endpoint-the-Category)
+* [Admin User](#Admin-User)
     
 ## Ruby & Rails version
 
@@ -32,5 +32,9 @@ gem "jquery-rails", "~> 4.4"
 
 ![Good Food](app/assets/images/diagrama.png)
 
+## Admin User
 
-
+```ruby
+- Email = "1@gmail.com"
+- Password = "123456"
+```
