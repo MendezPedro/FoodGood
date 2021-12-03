@@ -1,6 +1,21 @@
 <h1 class="text-center">FoodGood</h1>
 
+<% @user.each do |user| %>
+    <%= user.name %>
+    <%= user.email %>
+    <br>
+    <%# if user.images? %>
+        <div class="container ">
+            <%#= image_tag user.images.variant(resize: "50x50").processed, class: "img-fluid rounded-circle" %>
+        </div> 
+
+    <%# end %>
+<% end %>
+
+<%= image_tag current_user.images, class: "img-fluid rounded-circle" if @user.images.attached? %>
+
 <% if current_user %>
+    <h2>Tus datos</h2>
     <%= current_user.name %>
     <%= current_user.email %>
     <% if current_user.avatar? %>

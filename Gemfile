@@ -73,3 +73,7 @@ gem 'rails-erd', group: :development
 gem 'ruby-graphviz'
 #gema para administradores
 gem 'rails_admin', '~> 2.0'
+#gema para procesar imagenes
+gem 'image_processing', '~> 1.2'
+#gema para las funciones de amazon s3
+gem 'aws-sdk-s3'
