@@ -9,3 +9,8 @@
         </div> 
     <% end %>
 <% end %>
+
+<div id="edit-user-form"></div>
+<div id="edit-perfil-button">
+    <%= link_to "edita tu perfil", edit_user_path(current_user), class: "btn btn-success", remote: true  %>
+</div>

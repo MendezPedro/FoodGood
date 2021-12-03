@@ -1,0 +1,3 @@
+<%# reemplaza el formuliario para el edit %>
+$('#bookmark-form').html(" ");
+$("#urlmark-<%= @urlmark.id %>").replaceWith('<%= j render(@urlmark, urlmark: @urlmark)%>')
