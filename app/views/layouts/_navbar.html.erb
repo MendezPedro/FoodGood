@@ -6,11 +6,8 @@
                     <li class="nav-item px-3 font-weight-bold">
                         <%= link_to 'Inicio ', root_path %>
                     </li>
-                    <%# <li class="nav-item px-3 font-weight-bold"> %>
-                        <%#= link_to 'Usuarios para seguir ', users_index_path %>
-                    <%# </li> %>
                     <li class="nav-item  px-3 font-weight-bold">
-                        <%#= link_to 'editar perfil', edit_user_sessions_path(current_user) %>
+                        <%= link_to 'Tu Perfil', users_path(current_user) %>
                     </li> 
                     <li class="nav-item px-3 font-weight-bold">
                         <%= link_to 'Cerrar sesion ', destroy_user_session_path, method: :delete %>

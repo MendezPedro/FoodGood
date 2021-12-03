@@ -1,5 +1,5 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1 class="text-center">FoodGood</h1>
+
 <% if current_user %>
     <%= current_user.name %>
     <%= current_user.email %>
@@ -7,10 +7,8 @@
         <div class="container ">
             <%= image_tag current_user.avatar, class: "img-fluid rounded-circle" %>
         </div> 
+
     <% end %>
 <% end %>
 
 <div id="edit-user-form"></div>
-<div id="edit-perfil-button">
-    <%= link_to "edita tu perfil", edit_user_path(current_user), class: "btn btn-success", remote: true  %>
-</div>
