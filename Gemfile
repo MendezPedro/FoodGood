@@ -77,3 +77,6 @@ gem 'rails_admin', '~> 2.0'
 gem 'image_processing', '~> 1.2'
 #gema para las funciones de amazon s3
 gem 'aws-sdk-s3'
+gem 'activestorage-validator'
+#gema para ocultar con variables de entorno
+gem 'figaro'
