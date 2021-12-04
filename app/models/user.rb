@@ -11,4 +11,7 @@ class User < ApplicationRecord
   has_one_attached :images
 
   validates :images, presence: true, blob: {content_type: ['image/jpeg', 'image/jpg', 'image/png'], size_range: 0..3.megabytes}
+
+  ratyrate_rater
+
 end

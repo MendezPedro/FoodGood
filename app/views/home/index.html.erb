@@ -5,6 +5,7 @@
 <h5 class="text-center">Te invitamos a dar tu colaboración </h5>
 
 <p>Colabora para destacar a locales pequeños o poco conocidos y llevarte la oportunidad de comer algo muy cercano a tu casa o incluso categorias que no sabias que vendian en tu barrio</p>
+
 <%#= image_tag current_user.images, class: "img-fluid rounded-circle" if @user.images.attached? %>
 
 <% if current_user %>
@@ -20,15 +21,15 @@
                         <%= image_tag p.food_store_id.to_, class: "img-fluid rounded-circle" %>
                     </div> 
                     <% end %>
-                    <h5 class="card-title">rating: <%= p.rating %></h5>
+                    <p>rating: <%= rating_for p, 'rating' %></p>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"><%= p.user.name %></li>
                     <li class="list-group-item"><p class="card-text"><%= p.content %></p></li>
                 </ul>
                 <div class="card-body">
-                    <a href="#" class="card-link">Category: <%= @category %></a>
-                    <a href="#" class="card-link"><%= p.food_store_id %></a>
+                    <a href="#" class="card-link">Category: <%= p.category.title %></a>
+                    <a href="#" class="card-link"><%= p.food_store.name %></a>
                 </div>
             </div>
         <% end %>

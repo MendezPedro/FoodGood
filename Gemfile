@@ -80,3 +80,5 @@ gem 'aws-sdk-s3'
 gem 'activestorage-validator'
 #gema para ocultar con variables de entorno
 gem 'figaro'
+#gema para generar ratings de valoracion
+gem 'ratyrate'
