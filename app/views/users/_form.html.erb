@@ -26,6 +26,10 @@
         <%= f.text_field :avatar, autofocus: true, placeholder: "Url de tu avatar" %>
     </div>
 
+    <div class="form-group">
+        <%= f.label :images %><br />
+        <%= f.file_field :images, autofocus: true %>
+    </div>
     
     <div id="update-user-button" class = 'actions btn-succes my-3'>
         <%= f.submit %>

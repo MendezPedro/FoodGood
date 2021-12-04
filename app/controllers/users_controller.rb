@@ -1,8 +1,16 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   
+  def index
+    @user = User.all
+    @posts = Post.where(user_id:current_user.id)
+    @category = Category.where(id:409).pluck("title")
+  end
+
   def edit
     @user = User.find(params[:id])
+    @posts = Post.all
+    @post = Post.last
   end
 
   def update

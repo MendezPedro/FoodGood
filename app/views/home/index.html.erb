@@ -1,29 +1,36 @@
-<h1 class="text-center">FoodGood</h1>
+<h1 class="text-center bg-primary">FoodGood</h1>
 
-<% @user.each do |user| %>
-    <%= user.name %>
-    <%= user.email %>
-    <br>
-    <%# if user.images? %>
-        <div class="container ">
-            <%#= image_tag user.images.variant(resize: "50x50").processed, class: "img-fluid rounded-circle" %>
-        </div> 
+<h3 class="text-info">Bienvenido a un lugar donde podras encontrar locales de comidas compartidos por la comunidad </h3>
 
-    <%# end %>
-<% end %>
+<h5 class="text-center">Te invitamos a dar tu colaboración </h5>
 
+<p>Colabora para destacar a locales pequeños o poco conocidos y llevarte la oportunidad de comer algo muy cercano a tu casa o incluso categorias que no sabias que vendian en tu barrio</p>
 <%#= image_tag current_user.images, class: "img-fluid rounded-circle" if @user.images.attached? %>
 
 <% if current_user %>
-    <h2>Tus datos</h2>
-    <%= current_user.name %>
-    <%= current_user.email %>
-    <% if current_user.avatar? %>
-        <div class="container ">
-            <%= image_tag current_user.avatar, class: "img-fluid rounded-circle" %>
-        </div> 
-
-    <% end %>
+    <div class="row">
+        <% @posts.each do |p| %>
+            <div class="card card-group col-md-4 px-3 mt-5 pt5">
+                <div class="card-body">
+                    <h5 class="card-title"><%= p.title %></h5>
+                    <p>te juro que es una foto</p>
+                    <% if current_user == 0 %>
+                    
+                    <div class="container ">
+                        <%= image_tag p.food_store_id.to_, class: "img-fluid rounded-circle" %>
+                    </div> 
+                    <% end %>
+                    <h5 class="card-title">rating: <%= p.rating %></h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><%= p.user.name %></li>
+                    <li class="list-group-item"><p class="card-text"><%= p.content %></p></li>
+                </ul>
+                <div class="card-body">
+                    <a href="#" class="card-link">Category: <%= @category %></a>
+                    <a href="#" class="card-link"><%= p.food_store_id %></a>
+                </div>
+            </div>
+        <% end %>
+    </div>
 <% end %>
-
-<div id="edit-user-form"></div>
