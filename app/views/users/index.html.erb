@@ -9,15 +9,20 @@
 <br>
 <% end %>
 <div id="edit-perfil-button">
-    <%= link_to "edita tu perfil", edit_user_path(current_user), class: "btn btn-success", remote: true  %>
+    <%= link_to "Edita tu perfil", edit_user_path(current_user), class: "btn btn-success", remote: true  %>
 </div>
 <div id="edit-user-form"></div>
+
+<br>
+<div id="post-show" class="my-3"></div> 
+<div id="post-form" class="my-3"></div> 
 
 <br>
 <h1>Tus Publicaciones</h1>
 <% @posts.each do |post| %>
     <h3><%= post.title %></h3>
     <%= post.content %>
+    <td><%= link_to 'Mostrar', post, remote: true, class: "btn btn-info" %></td>
 <% end %>
 
 

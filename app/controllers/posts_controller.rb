@@ -20,9 +20,37 @@ class PostsController < ApplicationController
     @post.user = current_user
     respond_to do |format|
       if @post.save 
-        format.js { redirect_to root_path, notice: 'post create' }
+        format.js { redirect_to root_path, notice: 'Publicacion creada' }
       else
-        format.html { redirect_to root_path, alert: 'alert post not create' }
+        format.html { redirect_to root_path, alert: 'No se pudo crear la publicacion' }
+      end
+    end
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+    @categories = Category.all
+    @food_stores = FoodStore.all
+  end
+  
+  def update
+    @post = Post.find(params[:id])
+    respond_to do |format|
+      if @post.update(posts_params)
+        format.js { redirect_to users_path, notice: 'Publicacion actualizada' }
+      else
+        format.html { redirect_to users_path, alert: 'No se puedo actualizar' }
+      end
+    end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    respond_to do |format|
+      if @post.destroy!
+        format.js { redirect_to users_path, notice: 'publicacion eliminada' }
+      else
+        format.html { redirect_to users_path, alert: 'No se pudo eliminar' }
       end
     end
   end

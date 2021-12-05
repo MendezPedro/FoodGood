@@ -11,27 +11,27 @@
     <% end %>
 
     <div class="form-group">
-        <%= f.label :title %>
+        <%= f.label :title, "Titulo" %>
         <%= f.text_field :title, class: 'form-group' %>
     </div>
 
     <div class="form-group">
-        <%= f.label :content %>
+        <%= f.label :content, "Descripcion" %>
         <%= f.text_field :content, class: 'form-group' %>
     </div>
 
     <div class="form-group">
-        <%= f.label :category_id %>
-        <%= f.collection_select :category_id, @categories, :id, :title, include_blank: true %>
+        <%= f.label :category_id, "Categoría" %>
+        <%= f.collection_select :category_id, @categories, :id, :title, include_blank: true, class: 'form-group' %>
     </div>
 
     <div class="form-group">
-        <%= f.label :food_store_id %>
-        <%= f.collection_select :food_store_id, @food_stores, :id, :name, include_blank: true %>
+        <%= f.label :food_store_id, "Local referenciado" %>
+        <%= f.collection_select :food_store_id, @food_stores, :id, :name, include_blank: true, class: 'form-group' %>
     </div>
     
     <div id="create-button" class = 'actions'>
-        <%= f.submit %>
+        <%= f.submit "Crear Publicación", class: 'btn btn-success' %>
     </div>
 <% end %>
 <br>

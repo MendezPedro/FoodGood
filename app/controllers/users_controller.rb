@@ -30,9 +30,9 @@ class UsersController < ApplicationController
       if @user.destroy!
         # para que la vista no haga nada
         #format.js { render layout: false, notice: 'lo re borraste' }
-        format.html { redirect_to root_path, notice: 'category destroy' }
+        format.html { redirect_to root_path, notice: 'Usuario eliminado' }
       else
-        format.html { redirect_to root_path, alert: 'alert url bookmarks not create' }
+        format.html { redirect_to root_path, alert: 'No se pudo eliminar' }
       end
     end
   end

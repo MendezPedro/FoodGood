@@ -1,0 +1,20 @@
+<h3>Modifica tu publicación</h3> 
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th>Usuario</th>
+      <th>Titulo</th>
+      <th>Detalles</th>
+    </tr>
+  </thead>
+
+  <tbody id="category-table">
+
+<tr id="post-<%= post.id  %>">
+    <th scope="row"><%= current_user.name %></th>
+    <td><%= post.title %> </td> <br>
+    <td><%= post.content %></td>
+    <%#= botones con javascript %>
+    <td><%= link_to 'Editar', edit_post_path(post), remote: true, class: "btn btn-success"  %></td>
+    <td><%= link_to 'Eliminar', post, method: :delete, remote: true, class: "btn btn-warning" , data: { confirm: 'Are you sure?' } %></td> 
+</tr>

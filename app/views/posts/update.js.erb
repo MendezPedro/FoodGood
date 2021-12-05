@@ -1,0 +1,3 @@
+<%# reemplaza el formuliario para el edit %>
+$('#post-form').html(" ");
+$("#post-<%= @post.id %>").replaceWith('<%= j render(@post, post: @post)%>')

@@ -13,26 +13,26 @@
     <% end %>
 
     <div class="form-group">
-        <%= f.label :name %>
+        <%= f.label :name, "Tu nombre" %>
         <%= f.text_field :name, class: 'form-group' %>
     </div>
     <div class="form-group">
-        <%= f.label :email %>
+        <%= f.label :email, 'Tu Correo' %>
         <%= f.text_field :email, class: 'form-group' %>
     </div>
 
     <div class="form-group">
-        <%= f.label :avatar %><br />
-        <%= f.text_field :avatar, autofocus: true, placeholder: "Url de tu avatar" %>
+        <%= f.label :avatar, "Tu Foto" %><br />
+        <%= f.text_field :avatar, autofocus: true, placeholder: "Url de tu avatar", class: 'form-group' %>
     </div>
 
     <div class="form-group">
-        <%= f.label :images %><br />
-        <%= f.file_field :images, autofocus: true %>
+        <%= f.label :images, "Tu Foto" %><br />
+        <%= f.file_field :images, autofocus: true, class: 'form-group' %>
     </div>
     
     <div id="update-user-button" class = 'actions btn-succes my-3'>
-        <%= f.submit %>
+        <%= f.submit "Actualizar usuario", class: 'btn btn-success' %>
     </div>
 
 <% end %>
@@ -41,5 +41,5 @@
 
 <h3>¿Eliminar mi cuenta?</h3>
 
-<p><%= button_to "Cancel my account", users_path, data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p><%= button_to "Eliminar mi cuenta", users_path, data: { confirm: "Are you sure?" }, class: "btn btn-danger", method: :delete %></p>
 
