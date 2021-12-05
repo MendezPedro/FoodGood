@@ -1,0 +1,37 @@
+<%= form_with(model: @post, remote: true) do |f| %>
+    <% if @post.errors.any? %>
+        <div id = 'error_explanation'>
+            <h2>Esta publicacion no se pudo crear por las siguientes razones</h2>
+            <ul>
+                <% @post.errors.full_messages.each do |msg|%>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <div class="form-group">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: 'form-group' %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :content %>
+        <%= f.text_field :content, class: 'form-group' %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :category_id %>
+        <%= f.collection_select :category_id, @categories, :id, :title, include_blank: true %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :food_store_id %>
+        <%= f.collection_select :food_store_id, @food_stores, :id, :name, include_blank: true %>
+    </div>
+    
+    <div id="create-button" class = 'actions'>
+        <%= f.submit %>
+    </div>
+<% end %>
+<br>
