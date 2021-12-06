@@ -1,0 +1,39 @@
+<%#= para js se cambia el local: true por el remote: true %>
+<%= form_with(model: @food_store, remote: true) do |f| %>
+    <% if @food_store.errors.any? %>
+        <div id = 'error_explanation'>
+            <h2>Esta tienda de comida no se pudo crear por las siguientes razones</h2>
+            <ul>
+                <% @food_store.errors.full_messages.each do |msg|%>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-group' %>
+    </div>
+
+     <div class="form-group">
+        <%= f.label :latitude, "latitude" %>
+        <%= f.text_field :latitude, class: 'form-group' %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :longitude, "longitude" %>
+        <%= f.text_field :longitude, class: 'form-group' %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :photographics, "Fotos del local" %><br />
+        <%= f.file_field :photographics, multiple: true, autofocus: true, class: 'form-group' %>
+    </div>
+
+
+    <div id="create-button" class = 'actions'>
+        <%= f.submit "Crear Local", class: 'btn btn-success' %>
+    </div>
+<% end %>
+<br>

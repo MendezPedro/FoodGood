@@ -16,5 +16,5 @@
     <td><%= post.content %></td>
     <%#= botones con javascript %>
     <td><%= link_to 'Editar', edit_post_path(post), remote: true, class: "btn btn-success"  %></td>
-    <td><%= link_to 'Eliminar', post, method: :delete, remote: true, class: "btn btn-warning" , data: { confirm: 'Are you sure?' } %></td> 
+    <td><%= link_to 'Eliminar', post, method: :delete, remote: true, class: "btn btn-warning" , data: { confirm: '¿Estas seguro?' } %></td> 
 </tr>

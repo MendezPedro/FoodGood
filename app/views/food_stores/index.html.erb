@@ -1,0 +1,35 @@
+
+<div id="food-store-form"></div>
+
+<div id="food-store-button">
+    <%= link_to "Crea un Nuevo local", new_food_store_path, class: "btn btn-success", remote: true %>
+</div> 
+
+<div class="row">
+    <% @food_stores.each do |food_store| %>
+        <div class="card card-group col-md-4 px-3 mt-5 pt5 bg-light">
+            <div class="card-body">
+                <h5 class="card-title"><%= food_store.name %></h5>
+                    <% food_store.photographics.each do |photo| %>
+                        <% if photo != [] %>
+                        <li>
+                            <p><%#= photo.name %> 
+                            <p><%= image_tag photo.variant(resize: "300x300"), class: "img-fluid rounded-circle" %></p>
+                        </li>
+                        <% end %>
+                    <% end %>
+            </div>
+            <div class="container">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><%= food_store.latitude %></li>
+                    <li class="list-group-item"><%= food_store.longitude %></li>
+                    <li class="list-group-item"><p class="card-text"><%#= food_store.content %></p></li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <a href="#" class="card-link">Category: </a>
+
+            </div>
+        </div>
+    <% end %>
+</div>
