@@ -8,7 +8,8 @@ This project involves the creation of an application to food stores that are sma
 * [Ruby & Rails Gems](#ruby---rails-gems)
 * [Defining the models](#defining-the-models)
 * [Admin User](#Admin-User)
-    
+* [Gem for images](#gem-for-images)
+
 ## Ruby & Rails version
 
 * ruby '2.5.3'
@@ -37,4 +38,13 @@ gem "jquery-rails", "~> 4.4"
 ```ruby
 - Email = "1@gmail.com"
 - Password = "123456"
+```
+
+## Gem for images
+```ruby
+gem 'image_processing', '~> 1.2'
+```
+ImageMagick must be installed for use
+```ruby
+sudo apt install imagemagick
 ```
