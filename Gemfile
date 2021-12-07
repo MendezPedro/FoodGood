@@ -82,3 +82,5 @@ gem 'activestorage-validator'
 gem 'figaro'
 #gema para generar ratings de valoracion
 gem 'ratyrate'
+#gema para geolocalizacion
+gem 'geocoder'
