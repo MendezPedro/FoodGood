@@ -12,23 +12,14 @@
                 <h5 class="card-title"><%= food_store.name %></h5>
                     <% food_store.photographics.each do |photo| %>
                         <% if photo != [] %>
-                        <li>
-                            <p><%#= photo.name %> 
                             <p><%= image_tag photo.variant(resize: "300x300"), class: "img-fluid rounded-circle" %></p>
-                        </li>
                         <% end %>
                     <% end %>
             </div>
-            <div class="container">
+            <div class="container my-2">
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><%= food_store.latitude %></li>
-                    <li class="list-group-item"><%= food_store.longitude %></li>
-                    <li class="list-group-item"><p class="card-text"><%#= food_store.content %></p></li>
+                    <li class="list-group-item"><%= food_store.address %></li>
                 </ul>
-            </div>
-            <div class="card-body">
-                <a href="#" class="card-link">Category: </a>
-
             </div>
         </div>
     <% end %>
