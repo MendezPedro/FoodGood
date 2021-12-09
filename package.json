@@ -1,5 +1,7 @@
 {
   "name": "foodGood",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "highcharts": "^9.3.2"
+  }
 }

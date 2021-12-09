@@ -9,6 +9,7 @@ This project involves the creation of an application to food stores that are sma
 * [Defining the models](#defining-the-models)
 * [Admin User](#Admin-User)
 * [Gem for images](#gem-for-images)
+* [Add Yarn](#add-yarn)
 
 ## Ruby & Rails version
 
@@ -48,3 +49,9 @@ ImageMagick must be installed for use
 ```ruby
 sudo apt install imagemagick
 ```
+
+## Add yarn
+```ruby
+yarn add highcharts
+```
+
