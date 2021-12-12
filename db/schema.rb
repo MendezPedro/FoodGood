@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_07_200744) do
+ActiveRecord::Schema.define(version: 2021_12_12_032749) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,11 +71,12 @@ ActiveRecord::Schema.define(version: 2021_12_07_200744) do
     t.float "latitude"
     t.float "longitude"
     t.date "day_open"
-    t.datetime "schedule"
+    t.time "schedule"
     t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "address"
+    t.time "closing"
   end
 
   create_table "overall_averages", force: :cascade do |t|

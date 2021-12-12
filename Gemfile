@@ -84,3 +84,6 @@ gem 'figaro'
 gem 'ratyrate'
 #gema para geolocalizacion
 gem 'geocoder'
+#gema para calendario
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'

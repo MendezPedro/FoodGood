@@ -26,6 +26,20 @@
         <%= f.file_field :photographics, multiple: true, autofocus: true, class: 'form-group' %>
     </div>
 
+    <div class="form-group">
+        <%= f.label :day_open, "fecha inicio" %>
+        <%= f.date_select :day_open, class: 'form-group' %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :schedule, "Hora apertura" %>
+        <%= f.time_select :schedule, class: 'form-group' %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :closing, "Hora cierre" %>
+        <%= f.time_select :closing, class: 'form-group' %>
+    </div>
 
     <div id="create-button" class = 'actions'>
         <%= f.submit "Crear Local", class: 'btn btn-success' %>

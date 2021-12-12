@@ -27,6 +27,6 @@ class FoodStoresController < ApplicationController
 
   private
   def food_stores_params
-    params.require(:food_store).permit(:name, :latitude, :longitude, :day_open, :schedule, :address, photographics: [])
+    params.require(:food_store).permit(:name, :latitude, :longitude, :day_open, :schedule, :closing, :address, photographics: [])
   end
 end

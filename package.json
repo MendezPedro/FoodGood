@@ -2,6 +2,8 @@
   "name": "foodGood",
   "private": true,
   "dependencies": {
-    "highcharts": "^9.3.2"
+    "fullcalendar": "^5.10.1",
+    "highcharts": "^9.3.2",
+    "moment": "^2.29.1"
   }
 }
