@@ -9,6 +9,7 @@
         <div class="card card-group col-md-4 px-3 mt-5 pt5 bg-light">
             <div class="card-body">
                 <h5 class="card-title"><%= p.title %></h5>
+                <a href="#" class="card-link">Category: <%= p.category.title %></a>
                 <p>Dirección: <%= p.food_store.address %></p>
                 <% p.food_store.photographics.each do |photo| %>
                     <% if photo != [] %>
@@ -31,14 +32,10 @@
                     <% end %> 
                 <% end %> 
             </div>
-            <div class="card-body">
-                <a href="#" class="card-link">Category: <%= p.category.title %></a>
-                <a href="#" class="card-link"><%= p.food_store.name %></a>
-            </div>
             <div id="comment-form-<%= p.id %>"></div>
-
             <div id="comment-button-<%= p.id %>">
-                <%= link_to "Nueva Comentario", new_comment_path(post_id: p.id), class: "btn btn-primary", remote: true %>
+                <%= link_to "Ver Local", food_store_path(p.food_store.id), class: "btn btn-primary my-2" %>
+                <%= link_to "Nueva Comentario", new_comment_path(post_id: p.id), class: "btn btn-primary text-right", remote: true %>
             </div> 
         </div>
     <% end %>
