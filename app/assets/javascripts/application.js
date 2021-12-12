@@ -21,6 +21,8 @@
 //= require moment
 //= require fullcalendar
 //= require fullcalendar/locale-all
+//= require chartkick
+//= require Chart.bundle
 //= require_tree .
 function eventCalendar () { 
     return $ ('#calendar'). fullCalendar ({}); 

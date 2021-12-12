@@ -5,7 +5,20 @@ class UsersController < ApplicationController
     @user = User.all
     @posts = Post.where(user_id:current_user.id)
     @category = Category.where(id:409).pluck("title")
+
+    #para ser graficados
+    @yours_locals = Post.group(:user_id).count
+    @yours_comments = Comment.group(:user_id).count
   end
+
+  def show
+    
+  end
+
+  def graphic
+    
+  end
+  
 
   def edit
     @user = User.find(params[:id])

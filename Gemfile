@@ -87,3 +87,5 @@ gem 'geocoder'
 #gema para calendario
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
+#gema para graficar
+gem "chartkick", "~> 3.4"

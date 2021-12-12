@@ -8,11 +8,18 @@
     </div> 
 <br>
 <% end %>
-<div id="edit-perfil-button">
-    <%= link_to "Edita tu perfil", edit_user_path(current_user), class: "btn btn-success", remote: true  %>
+
+<div class="container text-center my-3">
+    <%= link_to "Graficoss", users_graphic_path(current_user.id), class: "btn btn-primary p-3" %>
+</div> 
+<div id="edit-perfil-button my-5">
+    <%= link_to "Edita tu perfil", edit_user_path(current_user), class: "btn btn-success my-3", remote: true  %>
 </div>
 <div id="edit-user-form"></div>
-
+<h3>Publicaciones por usuarios</h3>
+<%= column_chart @yours_locals %>
+<h3>Comentarios por usuarios</h3>
+<%= pie_chart @yours_comments %>
 <br>
 <div id="post-show" class="my-3"></div> 
 <div id="post-form" class="my-3"></div> 
