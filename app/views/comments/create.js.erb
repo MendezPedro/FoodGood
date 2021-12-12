@@ -1,0 +1,3 @@
+$("#comment-target").append('<%= j render(@comment, comment: @comment) %>');
+$('#comment-form-<%= @post.id %>').hide();
+$("#comment-buton-<%= @post.id %>").show()

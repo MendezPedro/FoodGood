@@ -23,10 +23,23 @@
                     <li class="list-group-item"><p class="card-text"><%= p.content %></p></li>
                 </ul>
             </div>
+            <div class="container my-3">
+                <% if p.comments %>
+                    <p>Comentarios</p>
+                    <% p.comments.each do |comment| %>
+                        <p class="list-group-item"><%= comment.user.name %>: <%= comment.content %></p>
+                    <% end %> 
+                <% end %> 
+            </div>
             <div class="card-body">
                 <a href="#" class="card-link">Category: <%= p.category.title %></a>
                 <a href="#" class="card-link"><%= p.food_store.name %></a>
             </div>
+            <div id="comment-form-<%= p.id %>"></div>
+
+            <div id="comment-button-<%= p.id %>">
+                <%= link_to "Nueva Comentario", new_comment_path(post_id: p.id), class: "btn btn-primary", remote: true %>
+            </div> 
         </div>
     <% end %>
 </div>
