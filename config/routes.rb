@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   get 'users/edit'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'home/index'
-  devise_for :users
+  devise_for :users, controller: {
+  omniauth_callback: "users/omniauth_callback"}
   resources :users
   resources :food_stores
   get 'users/graphic' 

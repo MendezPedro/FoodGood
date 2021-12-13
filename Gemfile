@@ -89,3 +89,6 @@ gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 #gema para graficar
 gem "chartkick", "~> 3.4"
+#gema para la authenticación con facebook
+gem 'omniauth'
+gem 'omniauth-facebook'

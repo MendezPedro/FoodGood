@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:index,  :edit, :create, :update, :destroy]
   
   def index
     @user = User.all
@@ -47,6 +47,19 @@ class UsersController < ApplicationController
       else
         format.html { redirect_to root_path, alert: 'No se pudo eliminar' }
       end
+    end
+  end
+
+  #este metodo facebook deberia ir en el controller de omniauth_callback
+  def facebook
+    @user = User.find_for_facebook_oauth(
+      request.env['omniauth.auth']
+    )
+    if @user.persisted?
+      flash[:notice] = "has ingresado via facebook"
+      sign_in_and_direct @user, :event => :authentication
+    else
+      redirect_to_new_user_registration_url
     end
   end
 
