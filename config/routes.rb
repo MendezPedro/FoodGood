@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
+  get 'dashboards/index'
   resources :donations
   post '/confirmation', to: 'donations#webhooh'
-  get '/mach', to: 'donations#check_donation' as: 'check_donation'
-  
+  get '/mach', to: 'donations#check_donation', as: 'check_donation'
+  #se agrega una ruta extra a dashboard
+  resources :dashboards do
+    get :graphic, on: :member
+  end
+
   resources :posts
   resources :comments
   post '/rate' => 'rater#create', :as => 'rate'
@@ -12,8 +17,7 @@ Rails.application.routes.draw do
   devise_for :users, controller: {
   omniauth_callback: "users/omniauth_callback"}
   resources :users
-  resources :food_stores
-  get 'users/graphic' 
+  resources :food_stores 
   root 'home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
