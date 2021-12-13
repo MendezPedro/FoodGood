@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :donations
+  post '/confirmation', to: 'donations#webhooh'
+  get '/mach', to: 'donations#check_donation' as: 'check_donation'
+  
   resources :posts
   resources :comments
   post '/rate' => 'rater#create', :as => 'rate'

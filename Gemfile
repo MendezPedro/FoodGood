@@ -92,3 +92,5 @@ gem "chartkick", "~> 3.4"
 #gema para la authenticación con facebook
 gem 'omniauth'
 gem 'omniauth-facebook'
+#gema para QR
+gem 'rqrcode'
