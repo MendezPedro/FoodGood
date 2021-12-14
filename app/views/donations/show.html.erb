@@ -1,33 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Amount:</strong>
-  <%= @donation.amount %>
+<h1>Realiza tu pago</h1>
+
+<p class="qrcode">
+  <%= @svg.html_safe %>
 </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @donation.title %>
-</p>
-
-<p>
-  <strong>Message:</strong>
-  <%= @donation.message %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @donation.status %>
-</p>
-
-<p>
-  <strong>Code:</strong>
-  <%= @donation.code %>
-</p>
-
-<p>
-  <%= raw @svg %>
-</p>
-
-<%= link_to 'Edit', edit_donation_path(@donation) %> |
-<%= link_to 'ya realice el pago', donations_path %>
+<%= link_to 'pago realizado', check_donation_path(@donation.id) %>

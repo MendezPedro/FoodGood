@@ -2,8 +2,10 @@ class DonationsController < ApplicationController
   require 'json'
   require 'net/http'
   require 'uri'
+  require 'rqrcode'
 
-  before_action :set_donation, only: %i[ show edit update destroy ]
+  skip_before_action :verify_authenticity_token
+  before_action :set_donation, only: %i[ show edit update destroy check_donation]
 
   # GET /donations or /donations.json
   def index
@@ -13,20 +15,36 @@ class DonationsController < ApplicationController
   # GET /donations/1 or /donations/1.json
   def show
     @qrcode = RQRCode::QRCode.new(@donation.payment_url)
-
+    
     @svg = @qrcode.as_svg(
       offset: 0,
       color: '000',
       shape_rendering: 'crispEdges',
       module_size: 6
-
     )
   end
 
   def check_donation
+    url = URI("https://biz.soymach.com/payments/#{@donation.code}")
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl = true
+
+    request = Net::HTTP::Get.new(url)
+    request["Authorization"] = ENV["mach_key_production"]
+
+    response = http.request(request)
+    response_body = JSON.parse(response.body)
     
+    respond_to do |format|
+      if response_body["status"] == "CONFIRMED" || response_body["status"] == "COMPLETED"
+        format.html { redirect_to root_path, notice: "pago realizado" }
+      elsif response_body["status"] == "PENDING"
+        format.html { redirect_to @donation, notice: "Aún no se realiza el pago" }
+      else
+        format.html { redirect_to @donation, notice: "no hay pago" }
+      end
+    end
   end
-  
 
   # GET /donations/new
   def new
@@ -41,33 +59,34 @@ class DonationsController < ApplicationController
   def create
     @donation = Donation.new(donation_params)
     @donation.status = "pending"
-#define payload for mach
+    #Define payload for mach
     payload = JSON.dump({
-      payment:{
+      payment: {
         amount: @donation.amount,
         message: @donation.message,
         title: @donation.title
       }
     })
-#url for mach
-    url = URI("https://biz-sandbox.soymach.com/payments")
-#create http object
+    #URL for mach
+    url = URI("https://biz.soymach.com/payments")
+    #Create HTTP object
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = true
-    #create request for mach
-    request = NET::HTTP::Post.new(url)
+    #Create request
+    request = Net::HTTP::Post.new(url)
     request["Content-Type"] = 'application/json'
-    request["Authorization"] = ENV["mach_key_sandbox"]
-    #set body 
+    request["Authorization"] = ENV["mach_key_production"]
+    #Set body
     request.body = payload
     response = http.request(request)
-    #parse response
-    response_body = JSON.parse(response.body.force_encoding("UTF-8"))
+    #Parse response
+    response_body = JSON.parse(response.body)
     @donation.code = response_body["token"]
     @donation.payment_url = response_body["url"]
+    #if donation is saved respond as html
     respond_to do |format|
       if @donation.save!
-        format.html {redirect_to @donation, notice: " donation was succesfully accept"}
+        format.html { redirect_to @donation, notice: "Donation was successfully created." }
       end
     end
   end
@@ -95,25 +114,25 @@ class DonationsController < ApplicationController
   end
 
   def webhook
-    donation = Donation.find_by(code: params["event_resources_id"])
-    case params["event_name"] = "business-payment-completed"
+    donation = Donation.find_by(code: params["event_resource_id"])
+    case params["event_name"] == "business-payment-completed"
     when true
       donation.status = "paid"
       donation.save!
-      render json: {
+      render json: { 
         success: true,
-        message: "Donation was successfully"
-      }, status:200
+        message: 'Donation completed!!!!!!' 
+      }, status: 200
     else
       donation.status = "failed"
       donation.save!
-      render json: {
+      render json: { 
         success: true,
-        message: "Donation not successfully"
-      }, status:200
+        message: 'Donation not completed!!!!!!' 
+      }, status: 200
     end
   end
-  
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

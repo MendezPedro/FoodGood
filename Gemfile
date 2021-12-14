@@ -80,6 +80,7 @@ gem 'aws-sdk-s3'
 gem 'activestorage-validator'
 #gema para ocultar con variables de entorno
 gem 'figaro'
+#para generar el archivo ->$  bundle exec figaro install
 #gema para generar ratings de valoracion
 gem 'ratyrate'
 #gema para geolocalizacion

@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   get 'dashboards/index'
   resources :donations
-  post '/confirmation', to: 'donations#webhooh'
-  get '/mach', to: 'donations#check_donation', as: 'check_donation'
+  post '/confirmation', to: 'donations#webhook'
+  get '/mach/:id', to: 'donations#check_donation', as: 'check_donation'
   #se agrega una ruta extra a dashboard
   resources :dashboards do
     get :graphic, on: :member
