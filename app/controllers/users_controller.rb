@@ -47,17 +47,17 @@ class UsersController < ApplicationController
   end
 
   #este metodo facebook deberia ir en el controller de omniauth_callback
-  def facebook
-    @user = User.find_for_facebook_oauth(
-      request.env['omniauth.auth']
-    )
-    if @user.persisted?
-      flash[:notice] = "has ingresado via facebook"
-      sign_in_and_direct @user, :event => :authentication
-    else
-      redirect_to_new_user_registration_url
-    end
-  end
+  # def facebook
+  #   @user = User.find_for_facebook_oauth(
+  #     request.env['omniauth.auth']
+  #   )
+  #   if @user.persisted?
+  #     flash[:notice] = "has ingresado via facebook"
+  #     sign_in_and_direct @user, :event => :authentication
+  #   else
+  #     redirect_to_new_user_registration_url
+  #   end
+  # end
 
   private
   def users_params
