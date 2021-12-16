@@ -46,6 +46,40 @@ class UsersController < ApplicationController
     end
   end
 
+  # def omniauth
+  #   @user = User.from_omniauth(auth)
+  #   @user.save
+  #   session[:user_id] = @user.id
+  #   redirect_to home_path
+  # end
+  
+  # private
+  # def auth
+  #   request.env['omniauth.auth']
+  # end
+  # def omniauth
+  #   @user = User.find_or_create_by(username: auth[:info][:email]) do |u|
+  #     u.email = auth[:info][:email]
+  #     u.username = auth[:info][:name]
+  #     u.uid = auth[:uid]
+  #     u.provider = auth[:provider]
+  #     u.password = SecureRandom.hex(10)
+  #   end
+  #   if @user.valid?
+    
+  #     session[:user_id] = @user.id
+  #     redirect_to root_path
+  #   else
+  #     flash[:message] = "error credential"
+  #     redirect_to root_path
+  #   end
+  # end
+  
+  # private
+  # def auth
+  #   request.env['omniauth.auth']
+  # end
+
   #este metodo facebook deberia ir en el controller de omniauth_callback
   # def facebook
   #   @user = User.find_for_facebook_oauth(
@@ -59,7 +93,7 @@ class UsersController < ApplicationController
   #   end
   # end
 
-  private
+
   def users_params
     params.require(:user).permit(:name, :email, :images)
   end

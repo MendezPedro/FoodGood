@@ -90,9 +90,9 @@ gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 #gema para graficar
 gem "chartkick", "~> 3.4"
-#gema para la authenticación con facebook
+#gema para la authenticación con google
 gem 'omniauth'
-gem 'omniauth-facebook'
-gem 'omniauth-rails_csrf_protection'
+gem 'dotenv-rails'
+gem 'omniauth-google-oauth2'
 #gema para QR
 gem 'rqrcode'
