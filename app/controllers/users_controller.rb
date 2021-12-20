@@ -37,6 +37,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     respond_to do |format|
       if @user.destroy!
+        # Tell the UserMailer to send a welcome email after save
+        UserMailer.with(user: @user).welcome_email.deliver_later
+
         # para que la vista no haga nada
         #format.js { render layout: false, notice: 'lo re borraste' }
         format.html { redirect_to root_path, notice: 'Usuario eliminado' }
@@ -93,7 +96,7 @@ class UsersController < ApplicationController
   #   end
   # end
 
-
+  private
   def users_params
     params.require(:user).permit(:name, :email, :images)
   end

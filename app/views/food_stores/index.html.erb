@@ -1,16 +1,12 @@
-
-<div id="food-store-form"></div>
-
+<div class="container py-3">
+    <div id="food-store-form"></div>
+</div>
 <div id="food-store-button">
     <%= link_to "Crea un Nuevo local", new_food_store_path, class: "btn btn-success", remote: true %>
 </div> 
 
-<div id="calendar"> </div>
-<script>
-    $('#calendar').fullCalendar({
-      food_stores: <%= @food_stores.to_json.html_safe %>
-    })
-</script>
+
+
 
 <div class="row">
     <% @food_stores.each do |food_store| %>

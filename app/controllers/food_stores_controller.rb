@@ -16,8 +16,12 @@ class FoodStoresController < ApplicationController
 
   def create
     @food_store = FoodStore.new(food_stores_params)
+    @user = current_user
     respond_to do |format|
       if @food_store.save 
+        # Tell the UserMailer to send a welcome email after save
+        UserMailer.with(user: @user).welcome_email.deliver_now
+
         format.js { redirect_to food_stores_path, notice: 'Tienda creada' }
       else
         format.html { redirect_to food_stores_path, alert: 'No se pudo crear la Tienda' }
