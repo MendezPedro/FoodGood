@@ -22,9 +22,9 @@ class FoodStoresController < ApplicationController
         # Tell the UserMailer to send a welcome email after save
         UserMailer.with(user: @user).welcome_email.deliver_now
 
-        format.js { redirect_to food_stores_path, notice: 'Tienda creada' }
+        format.js { redirect_to root_path, notice: 'Tienda creada' }
       else
-        format.html { redirect_to food_stores_path, alert: 'No se pudo crear la Tienda' }
+        format.html { redirect_to root_path, alert: 'No se pudo crear la Tienda' }
       end
     end
   end

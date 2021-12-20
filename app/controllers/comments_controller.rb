@@ -11,9 +11,9 @@ class CommentsController < ApplicationController
         @comment.user_id = current_user.id
         respond_to do |format|
             if @comment.save 
-                format.js { redirect_to root_path, notice: 'Comentario creada' }
+                format.js { redirect_to posts_path, notice: 'Comentario creada' }
             else
-                format.js { redirect_to root_path, alert: 'debe contener texto' }
+                format.js { redirect_to posts_path, alert: 'debe contener texto' }
             end
         end
     end

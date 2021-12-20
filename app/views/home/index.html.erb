@@ -1,14 +1,11 @@
 <h1 class="text-center bg-primary">FoodGood</h1>
 
-<h3 class="text-info">Bienvenido a un lugar donde podras encontrar locales de comidas compartidos por la comunidad </h3>
+<h3 class="">Bienvenido a un lugar donde podras encontrar locales de comidas compartidos por la comunidad </h3>
 
 <h5 class="text-center">Te invitamos a dar tu colaboración </h5>
 
 <p>Colabora para destacar a locales pequeños o poco conocidos y llevarte la oportunidad de comer algo muy cercano a tu casa o incluso categorias que no sabias que vendian en tu barrio</p>
 
 <% if current_user %>
-    <div class="container text-center py-3">
-        <%= link_to "Crear Locales", food_stores_path, class: "btn btn-primary p-3" %>
-    </div> 
-    <%= render 'posts/posts' %>
+    <%= render 'food_stores/food_stores' %>
 <% end %>

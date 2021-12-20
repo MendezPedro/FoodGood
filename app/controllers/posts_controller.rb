@@ -20,9 +20,9 @@ class PostsController < ApplicationController
     @post.user = current_user
     respond_to do |format|
       if @post.save 
-        format.js { redirect_to root_path, notice: 'Publicacion creada' }
+        format.js { redirect_to posts_path, notice: 'Publicacion creada' }
       else
-        format.html { redirect_to root_path, alert: 'No se pudo crear la publicacion' }
+        format.html { redirect_to posts_path, alert: 'No se pudo crear la publicacion' }
       end
     end
   end

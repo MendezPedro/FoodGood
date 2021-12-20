@@ -13,6 +13,8 @@
     <div class="container">
       <%= render 'layouts/navbar' %>
     </div>
+    <div class="container py-3">
+    </div>
     <div class="container ">
       <% if notice %>
         <p class="notice bg-success text-white"><%= notice %></p>
@@ -20,7 +22,9 @@
       <% if alert %>
       <p class="alert bg-warning text-white"><%= alert %></p>
       <% end %>
-      <%= yield %>
+      <div class="container ">
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>

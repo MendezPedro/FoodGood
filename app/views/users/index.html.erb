@@ -2,7 +2,7 @@
 
 
 <h2><%= current_user.name %></h2>
-<% if current_user.image? %>
+<% if current_user.images.attachment %>
     <div class="container ">
         <%= image_tag current_user.images.variant(resize: "300x300"), class: "img-fluid rounded-circle" %>
     </div> 
