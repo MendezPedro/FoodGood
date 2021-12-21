@@ -1,5 +1,5 @@
 # Be sure to restart your server when you modify this file.
-
+config.assets.initialize_on_precompile = false
 # ActiveSupport::Reloader.to_prepare do
 #   ApplicationController.renderer.defaults.merge!(
 #     http_host: 'example.org',
