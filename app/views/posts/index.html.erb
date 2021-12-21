@@ -7,8 +7,8 @@
 
 <div class="row">
     <% @posts.each do |p| %>
-        <div class="card card-group col-md-4 px-3 mt-5 pt5 bg-light">
-            <div class="card-body">
+        <div class="card card-group col-sm-12 col-lg-4 mt-3 px-3 mt-5 pt5 bg-light">
+            <div class="card-body text-center">
                 <h5 class="card-title"><%= p.title %></h5>
                 <p class="card-link">Categoría: <%= p.category.title %></p>
                 <p>Dirección: <%= p.food_store.address %></p>

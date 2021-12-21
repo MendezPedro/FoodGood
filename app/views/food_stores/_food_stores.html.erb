@@ -8,8 +8,8 @@
 
 <div class="row">
     <% @food_stores.each do |food_store| %>
-        <div class="card card-group col-md-4 px-3 mt-5 pt5 bg-light">
-            <div class="card-body">
+        <div class="card card-group col-sm-12 col-lg-4 mt-3 pt5 bg-light">
+            <div class="card-body text-center">
                 <h5 class="card-title"><%= food_store.name %></h5>
                     <% if food_store.photo %>
                         <p><%= image_tag food_store.photo, class: "img-fluid rounded-circle" %></p>

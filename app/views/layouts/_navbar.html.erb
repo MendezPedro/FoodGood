@@ -6,7 +6,12 @@
                 <%= submit_tag 'Buscar', class: 'btn btn-outline-success my-2 my-sm-0' %>
             <% end %>
         </div>
-        <div class="collapse navbar-collapse" id="navbarNav"> <!--oculta en pantalla pequeña-->
+          <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--oculta en pantalla pequeña, se puede ver con el boton-->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar"> 
             <ul class="navbar-nav ml-auto">
                 <% if user_signed_in? %>
                     <li class="nav-item px-3 font-weight-bold">
