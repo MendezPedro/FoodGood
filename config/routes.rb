@@ -15,8 +15,8 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'home/index'
   devise_for :users, controller: {
-  omniauth_callbacks: "auth/google_oauth2/callbacks"}
-  #get '/auth/google_oauth2/callback' => 'sessions#omniauth'
+  omniauth_callbacks: 'users/omniauth_callbacks'}
+  #get 'auth/google_oauth2/callback' => 'sessions#omniauth'
 
   resources :users
   resources :food_stores 
