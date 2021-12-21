@@ -6,9 +6,8 @@
     <div class="container ">
         <%= image_tag current_user.images.variant(resize: "300x300"), class: "img-fluid rounded-circle" %>
     </div> 
-<br>
 <% end %>
-
+<br>
 <div class="container text-center my-3">
     <%= link_to "Graficos", dashboards_path(current_user.id), class: "btn btn-primary p-3" %>
 </div> 

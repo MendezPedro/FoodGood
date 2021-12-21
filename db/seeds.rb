@@ -20,7 +20,6 @@ Category.destroy_all
     User.create(
         email: "#{x + 1}@gmail.com",
         name: Faker::TvShows::Simpsons.character,
-        avatar: Faker::Avatar.image,
         admin: true,
         password: "123456")
     
@@ -31,39 +30,40 @@ end
     User.create(
         email: "#{x + 3}@gmail.com",
         name: Faker::TvShows::Simpsons.character,
-        avatar: Faker::Avatar.image,
         admin: false,
         password: "123456")
     
 end
 
-30.times do
+categorias = ["Frutas","Almuerzos","Bebestibles","Helados","Comida rapida","Dulces"]
+
+6.times do |x|
     Category.create(
-        title: Faker::Food.fruits
+        title: categorias[x]
     )
 end
 
-100.times do
+sub_categorias = ["Pizza","Completos","Hamburguesas","Sandwiches","Snaks","Donas","Empanadas"]
+7.times do |x|
     Category.create(
-        title: Faker::TvShows::Simpsons.location,
-        category_id: Category.all.pluck("id").sample
+        title: sub_categorias[x],
+        category_id: Category.all.pluck("id")[5],
     )
 end
 
 50.times do
     FoodStore.create(
         name: Faker::Music::RockBand.name,
-        latitude: Faker::Address.latitude,
-        longitude: Faker::Address.longitude,
-        day_open: Time.zone.local(2021, 7, 11),
+        address: Faker::Address.street_address,
         schedule: Time.now.strftime("%H:%M"),
-        photo: Faker::Avatar.image
+        closing: "00:00",
+        photo: "http://imgcf.ecn.cl/600/8a/8a167b72f1c997639c821688fc2aa088960a8355.bin.jpg"
     )
 end
 
-50.times do
+100.times do
     Post.create(
-        title: Faker::Food.fruits,
+        title: Faker::Creature::Animal.name,
         user_id:User.all.pluck("id").sample,
         category_id:Category.all.pluck("id").sample,
         food_store_id:FoodStore.all.pluck("id").sample,

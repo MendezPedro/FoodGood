@@ -11,6 +11,9 @@
         <div class="card card-group col-md-4 px-3 mt-5 pt5 bg-light">
             <div class="card-body">
                 <h5 class="card-title"><%= food_store.name %></h5>
+                    <% if food_store.photo %>
+                        <p><%= image_tag food_store.photo, class: "img-fluid rounded-circle" %></p>
+                    <% end %>
                     <% food_store.photographics.each do |photo| %>
                         <% if photo != [] %>
                             <p><%= image_tag photo.variant(resize: "300x300"), class: "img-fluid rounded-circle" %></p>
@@ -20,7 +23,6 @@
             <div class="container">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"><%= food_store.address %></li>
-                    <li class="list-group-item"><%= food_store.day_open %></li>
                     <% if food_store.schedule %>
                         <li class="list-group-item">Apertura: <%= food_store.schedule.strftime("%H:%M") %></li>
                     <% end %>

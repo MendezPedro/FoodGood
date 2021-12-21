@@ -10,8 +10,12 @@
         <div class="card card-group col-md-4 px-3 mt-5 pt5 bg-light">
             <div class="card-body">
                 <h5 class="card-title"><%= p.title %></h5>
-                <a href="#" class="card-link">Category: <%= p.category.title %></a>
+                <p class="card-link">Categoría: <%= p.category.title %></p>
                 <p>Dirección: <%= p.food_store.address %></p>
+                <p>Publicado por: <%= p.user.name %></p>
+                <% if p.food_store.photo %>
+                    <p><%= image_tag p.food_store.photo, class: "img-fluid rounded-circle" %></p>
+                <% end %>
                 <% p.food_store.photographics.each do |photo| %>
                     <% if photo != [] %>
                         <p><%= image_tag photo.variant(resize: "300x300"), class: "img-fluid rounded-circle" %></p>
@@ -19,15 +23,12 @@
                 <% end %> 
                 <p>rating: <%= rating_for p, 'rating' %></p>
             </div>
-            <div class="container">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><%= p.user.name %></li>
-                    <li class="list-group-item"><p class="card-text"><%= p.content %></p></li>
-                </ul>
-            </div>
             <div class="container my-3">
                 <% if p.comments %>
                     <p>Comentarios</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><p class="card-text"><%= p.content %></p></li>
+                    </ul>
                     <% p.comments.each do |comment| %>
                         <p class="list-group-item"><%= comment.user.name %>: <%= comment.content %></p>
                     <% end %> 
