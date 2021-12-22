@@ -14,14 +14,19 @@ class DonationsController < ApplicationController
 
   # GET /donations/1 or /donations/1.json
   def show
-    @qrcode = RQRCode::QRCode.new(@donation.payment_url)
-    
-    @svg = @qrcode.as_svg(
-      offset: 0,
-      color: '000',
-      shape_rendering: 'crispEdges',
-      module_size: 6
-    )
+    #@donation = Donation.find(params[:id])
+    if @donation.code != nil
+      @qrcode = RQRCode::QRCode.new(@donation.payment_url)
+      
+      @svg = @qrcode.as_svg(
+        offset: 0,
+        color: '000',
+        shape_rendering: 'crispEdges',
+        module_size: 6
+      )
+    else
+      redirect_to root_path, notice: "no hay pago" 
+    end
   end
 
   def check_donation
@@ -85,8 +90,10 @@ class DonationsController < ApplicationController
     @donation.payment_url = response_body["url"]
     #if donation is saved respond as html
     respond_to do |format|
-      if @donation.save!
-        format.html { redirect_to @donation, notice: "Donation was successfully created." }
+      if @donation.save
+        format.html { redirect_to donations_path, notice: "Se creo nueva donacion." }
+      else
+        format.html { redirect_to root_path, alert: 'No se pudo crear la Donación' }
       end
     end
   end

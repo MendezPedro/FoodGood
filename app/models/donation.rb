@@ -1,3 +1,4 @@
 class Donation < ApplicationRecord
-    #enum :status => [:pending, :approved, :rejected]
+    validates :amount, presence: true
+    validates :title, presence: true
 end
