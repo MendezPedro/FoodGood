@@ -3,10 +3,10 @@
 This project involves the creation of an application to food stores that are small or that do not belong to the best known. with the aim of knowing new places in your area
 
 ## Table of Contents
-* [Heroku link](#ruby---heroku-link)
-* [User History](#ruby---user-history)
-* [Ruby & Rails version](#ruby---rails-version)
-* [Ruby & Rails Gems](#ruby---rails-gems)
+* [Heroku link](#heroku-link)
+* [User History](#user-history)
+* [Ruby & Rails version](#rails-version)
+* [Ruby & Rails Gems](#rails-gems)
 * [Defining the models](#defining-the-models)
 * [Admin User](#Admin-User)
 * [Gem for images](#gem-for-images)
