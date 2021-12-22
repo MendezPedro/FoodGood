@@ -3,8 +3,7 @@ class UserMailer < ApplicationMailer
 
     def welcome_email
       @user = params[:user]
-      @url  = 'http://example.com/login'
-      mail(to: "food94good@gmail.com", subject: 'Welcome to My Awesome Site')
+      mail(to: "food94good@gmail.com", subject: 'Haz creado un nuevo local')
     end
     # class SendWeeklySummary
     #     def run

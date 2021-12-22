@@ -69,15 +69,15 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
   config.action_mailer.delivery_method = :smtp
-  host = 'example.com' #replace with your own url
+  host = 'https://food94good.herokuapp.com/' #replace with your own url
   config.action_mailer.default_url_options = { host: host }
 
 # SMTP settings for gmail
   config.action_mailer.smtp_settings = {
     :address              => "smtp.gmail.com",
     :port                 => 587,
-    :user_name            => "food94good@gmail.com",
-    :password             => ENV['contraseña_email'],
+    :user_name            => ENV['gmail_user'],
+    :password             => ENV['gmail_password'],
     :authentication       => "plain",
     :enable_starttls_auto => true
 }
