@@ -3,7 +3,8 @@
 This project involves the creation of an application to food stores that are small or that do not belong to the best known. with the aim of knowing new places in your area
 
 ## Table of Contents
-
+* [Heroku link](#ruby---heroku-link)
+* [User History](#ruby---user-history)
 * [Ruby & Rails version](#ruby---rails-version)
 * [Ruby & Rails Gems](#ruby---rails-gems)
 * [Defining the models](#defining-the-models)
@@ -11,16 +12,25 @@ This project involves the creation of an application to food stores that are sma
 * [Gem for images](#gem-for-images)
 * [Add Yarn](#add-yarn)
 
+
+## Heroku Link
+
+```ruby
+https://trello.com/b/hLa4PH0r/project
+```
+
+## User history
+
+```ruby
+https://food94good.herokuapp.com/
+```
+
+
 ## Ruby & Rails version
 
 * ruby '2.5.3'
 * gem 'rails', '~> 5.2.6'
 
-## User history
-
-```ruby
-https://trello.com/b/hLa4PH0r/project
-```
 
 ## Ruby & Rails Gems
 
