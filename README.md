@@ -6,6 +6,7 @@ This project involves the creation of an application to food stores that are sma
 * [Heroku link](#heroku-link)
 * [User History](#user-history)
 * [Ruby & Rails version](#rails-version)
+* [Basic Usage](#basic-usage)
 * [Ruby & Rails Gems](#rails-gems)
 * [Defining the models](#defining-the-models)
 * [Admin User](#Admin-User)
@@ -31,6 +32,16 @@ https://food94good.herokuapp.com/
 * ruby '2.5.3'
 * gem 'rails', '~> 5.2.6'
 
+## Basic Usage
+
+```ruby
+1.- bundle
+2.- sudo service postgresql start
+3.- rails db:create
+4.- rails db:seed
+5.- create environment variables for 'active storage', 'mach key', 'goggle develoment', 'google email'
+5.- rails s
+```
 
 ## Ruby & Rails Gems
 
@@ -38,6 +49,7 @@ https://food94good.herokuapp.com/
 gem "faker", "~> 2.19"
 gem "bootstrap", "~> 5.1"
 gem "jquery-rails", "~> 4.4"
+gem 'figaro'
 ```
 
 ## Defining the models
