@@ -94,5 +94,6 @@ gem "chartkick", "~> 3.4"
 gem 'omniauth'
 gem 'dotenv-rails'
 gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection', '~> 1.0'
 #gema para QR
 gem 'rqrcode'

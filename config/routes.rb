@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get 'home/index'
   devise_for :users, controller: {
   omniauth_callbacks: 'users/omniauth_callbacks'}
-  #get 'auth/google_oauth2/callback' => 'sessions#omniauth'
+  #post 'auth/google_oauth2/callback' => 'sessions#omniauth'
 
   resources :users
   resources :food_stores 
