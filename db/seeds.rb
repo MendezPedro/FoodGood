@@ -51,11 +51,13 @@ sub_categorias = ["Pizza","Completos","Hamburguesas","Sandwiches","Snaks","Donas
     )
 end
 
+fast_food = ["Completos","Churrascos","Sushi","Cabritas","Helados","Sopaipillas","Pollo","Papas Fritas"]
 50.times do
     FoodStore.create(
         name: Faker::Music::RockBand.name,
         address: Faker::Address.street_address,
         schedule: Time.now.strftime("%H:%M"),
+        products: "#{fast_food.sample},#{fast_food.sample} y #{fast_food.sample}.",
         closing: "00:00",
         photo: "http://imgcf.ecn.cl/600/8a/8a167b72f1c997639c821688fc2aa088960a8355.bin.jpg"
     )

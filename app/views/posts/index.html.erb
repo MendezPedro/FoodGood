@@ -11,6 +11,7 @@
             <div class="card-body text-center">
                 <h5 class="card-title"><%= p.title %></h5>
                 <p class="card-link">Categoría: <%= p.category.title %></p>
+                <p>Productos: <%= p.food_store.products %></p>
                 <p>Dirección: <%= p.food_store.address %></p>
                 <p>Publicado por: <%= p.user.name %></p>
                 <% if p.food_store.photo %>

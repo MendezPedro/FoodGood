@@ -15,7 +15,8 @@
             </div>
             <div class="container my-2">
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><%= @food_store.address %></li>
+                    <li class="list-group-item">Productos: <%= @food_store.products %></li>
+                    <li class="list-group-item">Dirección: <%= @food_store.address %></li>
                     <% if @food_store.schedule %>
                         <li class="list-group-item">Apertura: <%= @food_store.schedule.strftime("%H:%M") %></li>
                     <% end %>

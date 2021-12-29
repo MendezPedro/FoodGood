@@ -13,14 +13,13 @@ This project involves the creation of an application to food stores that are sma
 * [Gem for images](#gem-for-images)
 * [Add Yarn](#add-yarn)
 
-
-## Heroku Link
+## User history
 
 ```ruby
 https://trello.com/b/hLa4PH0r/project
 ```
 
-## User history
+## Heroku Link
 
 ```ruby
 https://food94good.herokuapp.com/
@@ -38,9 +37,10 @@ https://food94good.herokuapp.com/
 1.- bundle
 2.- sudo service postgresql start
 3.- rails db:create
-4.- rails db:seed
-5.- create environment variables for 'active storage', 'mach key', 'goggle develoment', 'google email'
-5.- rails s
+4.- rails db:migrate
+5.- rails db:seed
+6.- create environment variables for 'active storage', 'mach key', 'goggle develoment', 'google email'
+7.- rails s
 ```
 
 ## Ruby & Rails Gems
