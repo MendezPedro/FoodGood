@@ -3,7 +3,7 @@ class UserMailer < ApplicationMailer
 
     def welcome_email
       @user = params[:user]
-      mail(to: @user.email, subject: 'Haz creado un nuevo local')
+      mail(to: "food94good@gmail.com", subject: 'Haz creado un nuevo local')
     end
     # class SendWeeklySummary
     #     def run
