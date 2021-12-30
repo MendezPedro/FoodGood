@@ -1,6 +1,14 @@
 class FoodStoresController < ApplicationController
   before_action :authenticate_user!
 
+  def get_locations
+    url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=#{params[:latitude]},#{params[:longitude]}&radius=500&key=#{ENV['GOOGLE_PLACES_KEY']}"
+    http_call = open(url).read
+    response = JSON.parse(http_call, {:symbolize_names => true})
+    @locations = response[:results]
+  end
+  
+
   def index
     @food_stores = FoodStore.all.order(created_at: :desc)
   end

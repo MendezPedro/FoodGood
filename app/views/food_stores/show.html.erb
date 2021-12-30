@@ -16,6 +16,7 @@
             <div class="container my-2">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Productos: <%= @food_store.products %></li>
+                    <%#= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@food_store.latitude},#{@food_store.longitude}&zoom=12&size=400x400&key=#{ENV['GOOGLE_PLACES_KEY']}" %>
                     <li class="list-group-item">Dirección: <%= @food_store.address %></li>
                     <% if @food_store.schedule %>
                         <li class="list-group-item">Apertura: <%= @food_store.schedule.strftime("%H:%M") %></li>
